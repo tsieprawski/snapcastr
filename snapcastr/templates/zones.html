@@ -1,26 +1,27 @@
-{% extends "base.html" %}
+{% extends "index.html" %}
 
 {% block content %}
 <div class=sc>
-<h3>clients </h3>
+<h3>Zones</h3>
 </div>
 <form class="form form-inline" method="post" role="form">
 <div class=sc>
   <table>
   <tr>
-    <td><h4>client</h4></td>
-    <td><h4>group</h4></td>
+    <td><h4>Client</h4></td>
+    <td><h4>Group</h4></td>
   </tr>
   {% for form in forms %}
   <tr>
-    <td><div> {{ form.hf.data }} {{ form.hf }} </div></td>
-    <td> {{ form.select }} </td>
+    <td>{{ form.hf.data }} {{ form.hf }}</td>
+    <td>{{ form.select }}</td>
   </tr>
   {% endfor %}
-  <tr><td>
-      <p></p>
+  <tr>
+    <td>
       <input type=submit value=change class='btn-primary'>
-  </td></tr>
+    </td>
+  </tr>
 </table>
 </form>
 </div>

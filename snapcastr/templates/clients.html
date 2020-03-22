@@ -1,28 +1,29 @@
-{% extends "base.html" %}
+{% extends "index.html" %}
 
 {% block content %}
 <div class=sc>
-<h3>clients </h3>
+<h3>Clients</h3>
 </div>
-<form class="form form-inline" method="post" role="form">
 <div class=sc>
   <table>
   <tr>
-    <td><h4>name</h4></td>
-    <td><h4>volume</h4></td>
+    <td><h4>Name</h4></td>
+    <td><h4>Volume</h4></td>
+    <td></td>
   </tr>
   {% for form in forms %}
-  <tr>
-    <td><div>{{ form.hf.data }} {{ form.hf }} </div></td>
-    <td><div class=sc-slider> {{ form.slider }} </div></td>
-  </tr>
-  {% endfor %}
-  <tr><td>
-      <p></p>
+  <form class="form form-inline" method="post" role="form">
+    <tr>
+      {{ form.hf }}
+      <td>{{ form.name.data }}</td>
+      <td><div class=sc-slider>{{ form.slider }}</div></td>
+    <td>
       <input type=submit value=change class='btn-primary'>
-  </td></tr>
+    </td>
+    </tr>
+  </form>
+  {% endfor %}
 </table>
-</form>
 </div>
 {% endblock %}
 

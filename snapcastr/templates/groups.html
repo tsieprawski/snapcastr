@@ -1,37 +1,36 @@
-{% extends "base.html" %}
+{% extends "index.html" %}
 
 {% block content %}
 <div class=sc>
-<h3>groups </h3>
+<h3>Groups</h3>
 </div>
 <form class="form" method="post" role="form">
 <div class=sc>
 <table>
   <tr>
-    <td><h4>name</h4></td>
-    <td><h4>clients</h4></td>
-    <td><h4>stream</h4></td>
+    <td><h4>Name</h4></td>
+    <td><h4>Clients</h4></td>
+    <td><h4>Stream</h4></td>
   </tr>
   {% for form in forms %}
   <tr>
-    <td>
-      <div>{{ form.name.data }} </div>
-      <div>{{ form.hf }} </div>
-    </td>
+    {{ form.hf }}
+    <td>{{ form.name.data }}</td>
     <td>
       <ul>
-      {% for client in  form.clients %}
+      {% for client in form.clients %}
         <li>{{ client }}</li>
       {% endfor%}
       </ul>
     </td>
-    <td> {{ form.select }} </td>
+    <td>{{ form.select }}</td>
   </tr>
   {% endfor %}
-  <tr><td>
-      <p></p>
+  <tr>
+    <td>
       <input type=submit value=change class='btn-primary'>
-  </td></tr>
+    </td>
+  </tr>
 </table>
 </form>
 </div>
