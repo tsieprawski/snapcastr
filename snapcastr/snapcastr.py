@@ -91,6 +91,7 @@ def clients():
             form.name.data = client.friendly_name
         else:
             form.name.data = client.identifier
+        form.connected = client.connected
         forms.append(form)
 
     return render_template('clients.html', page='clients', forms=forms)

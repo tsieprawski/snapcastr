@@ -7,6 +7,7 @@
 <div class=sc>
   <table>
   <tr>
+    <td><h4>Online</h4></td>
     <td><h4>Name</h4></td>
     <td><h4>Volume</h4></td>
     <td></td>
@@ -15,11 +16,10 @@
   <form class="form form-inline" method="post" role="form">
     <tr>
       {{ form.hf }}
+      <td>{% if form.connected %}✅{% else %}❌{% endif %}</td>
       <td>{{ form.name.data }}</td>
       <td><div class=sc-slider>{{ form.slider }}</div></td>
-    <td>
-      <input type=submit value=change class='btn-primary'>
-    </td>
+      <td><input type=submit value=change class='btn-primary'></td>
     </tr>
   </form>
   {% endfor %}
